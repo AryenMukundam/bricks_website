@@ -1,11 +1,11 @@
 import React from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/images/Logo.png";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="bg-[#fff8f2] border-b border-[#f3e5d8] shadow-lg backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-6 py-2">
+    <nav className=" shadow-lg backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <Link
             to="/"
@@ -16,7 +16,7 @@ function Navbar() {
               src={logo}
               alt="BricksEducation Logo"
             />
-            <h1 className="text-l font-bold tracking-wide">
+            <h1 className="text-xl font-bold tracking-wide">
               <span className="text-slate-800 group-hover:text-slate-700 transition-colors">
                 Bricks
               </span>

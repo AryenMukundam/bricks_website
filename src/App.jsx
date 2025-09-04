@@ -1,12 +1,12 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom"; // ✅ Import Routes & Route
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
+
 import "./App.css";
 import Workshop from "./pages/Workshop";
 import Curriculum from "./pages/Curriculum";
 import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs"
-import Banner from "./components/banner";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (

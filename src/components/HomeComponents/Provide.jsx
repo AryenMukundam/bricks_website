@@ -345,6 +345,8 @@ export default function Provide() {
         </div>
       </div>
 
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600"></div>
+
       <style jsx>{`
         @keyframes grid-move {
           0% {

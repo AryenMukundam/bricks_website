@@ -6,7 +6,7 @@ function Banner() {
     <div className="relative h-[90vh] w-[100vw] mt-1">
       {/* Banner Image with reduced opacity */}
       <div
-        className="h-full w-full bg-cover bg-center opacity-60 rounded-2xl"
+        className="h-full w-full bg-cover bg-center opacity-100 rounded-2xl"
         style={{
           backgroundImage: `url(${BannerImg})`,
         }}

@@ -1,11 +1,15 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Globe } from 'lucide-react';
+import TermsAndConditions from '../pages/TermsAndConditions';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import RefundPolicy from '../pages/RefundPolicy';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 border-t">
+    <footer className="bg-[#fff8f2] border-t">
+      
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
           {/* Brand Section */}
           <div>
@@ -18,6 +22,43 @@ const Footer = () => {
             <p className="text-gray-600 text-sm">
               Empowering students through innovative robotics education and hands-on learning experiences.
             </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold mb-4 text-gray-800">Quick Links</h3>
+            <div className="space-y-2">
+              <div>
+                <a href="/" className="text-gray-700 text-sm hover:text-orange-600 block">
+                  Home
+                </a>
+              </div>
+              <div>
+                <a href="/bootcamp" className="text-gray-700 text-sm hover:text-orange-600 block">
+                  Bootcamp
+                </a>
+              </div>
+              <div>
+                <a href="/contact" className="text-gray-700 text-sm hover:text-orange-600 block">
+                  Contact
+                </a>
+              </div>
+              <div>
+                <a href="/refund-policy" className="text-gray-700 text-sm hover:text-orange-600 block">
+                  Refund Policy
+                </a>
+              </div>
+              <div>
+                <a href="/privacy-policy" className="text-gray-700 text-sm hover:text-orange-600 block">
+                  Privacy Policy
+                </a>
+              </div>
+              <div>
+                <a href="/terms-and-conditions" className="text-gray-700 text-sm hover:text-orange-600 block">
+                  Terms & Conditions
+                </a>
+              </div>
+            </div>
           </div>
           
           {/* Contact Information */}
@@ -52,7 +93,7 @@ const Footer = () => {
               <MapPin size={16} className="text-orange-600 mt-1" />
               <div>
                 <p className="text-gray-700 text-sm">
-                  BRICKS EDUCATION INITIATIVE<br />
+                  BRICKS EDUCATION<br />
                   Electronic City, Bangalore, INDIA
                 </p>
               </div>

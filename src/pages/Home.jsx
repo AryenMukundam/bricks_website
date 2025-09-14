@@ -10,7 +10,7 @@ import Workshop from "../components/HomeComponents/Workshop";
 import Outcomes from "../components/HomeComponents/Outcomes";
 import Provide from "../components/HomeComponents/Provide";
 import Glimpses from "../components/HomeComponents/Glimpses";
-import Footer from "../components/HomeComponents/Footer";
+
 
 function Home() {
   return (
@@ -19,7 +19,9 @@ function Home() {
       <main>
         <Banner />
         <Aboutus />
+
         <Testimonials />
+        <Partner/>
         
         <Workshop/>
         <Glimpses/>
@@ -27,8 +29,8 @@ function Home() {
         <SchoolTestimonials/>
         <Provide/>
         
-        <Partner/>
-        <Footer/>
+        
+
       </main>
     </HomeProvider>
   );

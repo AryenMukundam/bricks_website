@@ -18,7 +18,7 @@ export default function Partner() {
   ];
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-orange-50 via-white to-orange-50 py-20 overflow-hidden">
+    <section className="relative w-full bg-[#fff8f2] py-20 overflow-hidden">
       <div className="relative max-w-7xl mx-auto text-center px-6">
         {/* Enhanced Heading */}
         <div className="mb-16 animate-fade-in">

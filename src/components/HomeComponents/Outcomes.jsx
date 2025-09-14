@@ -174,15 +174,15 @@ export default function Outcomes() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="group">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                100%
+                6000+
               </div>
-              <div className="text-gray-600 text-sm mt-2">Hands-on Learning</div>
+              <div className="text-gray-600 text-sm mt-2">Students Engaged</div>
             </div>
             <div className="group">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">
-                8+
+                25+
               </div>
-              <div className="text-gray-600 text-sm mt-2">Key Skills</div>
+              <div className="text-gray-600 text-sm mt-2">Schools Partnered</div>
             </div>
             <div className="group">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">

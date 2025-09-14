@@ -1,5 +1,8 @@
 /*.js
   Content-Type: text/javascript
 
-/*.mjs
+/*.mjs  
   Content-Type: text/javascript
+
+/*.svg
+  Content-Type: image/svg+xml

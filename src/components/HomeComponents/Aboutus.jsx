@@ -1,9 +1,9 @@
 import React from "react";
-import teamPhoto from "../../assets/images/Banner2.jpg";
+import teamPhoto from "../../assets/images/Team.jpg";
 
 const AboutUs = () => {
   return (
-    <div className="bg-[#fff8f2] border-b border-[#f3e5d8]  px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#fff8f2] border-b border-[#f3e5d8]  py-5 px-4 sm:px-6 lg:px-">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="flex flex-col justify-center space-y-6">
@@ -28,9 +28,20 @@ const AboutUs = () => {
               simple: to turn curiosity into capability and students into
               <span className="font-bold text-orange-600">
                 {" "}
-                future-ready thinkers
+                future-ready thinkers 
               </span>
-              .
+               {" "}We create hands-on, highly engaging <span className="font-bold text-orange-600">
+                {" "}
+                workshops
+              </span> that blend AI,
+              coding, robotics, career exposure, and public speaking all in a
+              format that’s fun, challenging, and unforgettable. Every student
+              we work with doesn’t just learn, they explore, collaborate,
+              question, and build. Because at <span className="font-bold text-orange-600">
+                {" "}
+                BRICKS
+              </span>, we don’t just teach. We
+              spark futures .
             </p>
           </div>
 

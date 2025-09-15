@@ -50,7 +50,7 @@ export default function Partner() {
                 className="block"
               >
                 {/* Circular logo container */}
-                <div className="relative w-20 h-20 mx-auto rounded-full overflow-hidden border-3 border-orange-200 group-hover:border-orange-400 transition-all duration-300 cursor-pointer shadow-lg group-hover:shadow-xl">
+                <div className="relative w-30 h-30 mx-auto rounded-full overflow-hidden border-3 border-orange-200 group-hover:border-orange-400 transition-all duration-300 cursor-pointer shadow-lg group-hover:shadow-xl">
                   <img
                     src={partner.logo}
                     alt={partner.name}

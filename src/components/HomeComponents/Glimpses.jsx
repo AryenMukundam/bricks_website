@@ -12,30 +12,12 @@ export default function GlimpsesSection() {
   const [visibleItems, setVisibleItems] = useState(new Set());
 
   const glimpses = [
-    {
-      id: 1,
-      image: Pic1,
-    },
-    {
-      id: 2,
-      image: Pic4,
-    },
-    {
-      id: 3,
-      image: Pic3,
-    },
-    {
-      id: 4,
-      image: Pic2,
-    },
-    {
-      id: 5,
-      image: Pic5,
-    },
-    {
-      id: 6,
-      image: Pic6,
-    }
+    { id: 1, image: Pic1 },
+    { id: 2, image: Pic4 },
+    { id: 3, image: Pic3 },
+    { id: 4, image: Pic2 },
+    { id: 5, image: Pic5 },
+    { id: 6, image: Pic6 },
   ];
 
   useEffect(() => {
@@ -57,13 +39,8 @@ export default function GlimpsesSection() {
     return () => observer.disconnect();
   }, []);
 
-  const openModal = (glimpse) => {
-    setActiveImage(glimpse);
-  };
-
-  const closeModal = () => {
-    setActiveImage(null);
-  };
+  const openModal = (glimpse) => setActiveImage(glimpse);
+  const closeModal = () => setActiveImage(null);
 
   return (
     <section className="w-full py-20 px-6 bg-[#fff8f2] relative overflow-hidden">
@@ -90,124 +67,122 @@ export default function GlimpsesSection() {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-12 gap-4 md:gap-6">
-          {/* Large Workshop Image */}
-          <div 
-            className="col-span-12 md:col-span-6 row-span-2"
-            data-id={glimpses[0].id}
-          >
-            <div className={`group relative h-80 md:h-96 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
-              visibleItems.has(glimpses[0].id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} onClick={() => openModal(glimpses[0])}>
-              <img 
-                src={glimpses[0].image} 
-                alt="Workshop Image"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
+        {/* Desktop Grid (unchanged) */}
+        <div className="hidden md:grid grid-cols-12 gap-4 md:gap-6">
+          <div className="col-span-12 md:col-span-6 row-span-2" data-id={glimpses[0].id}>
+            <div
+              className={`group relative h-80 md:h-96 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
+                visibleItems.has(glimpses[0].id) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              onClick={() => openModal(glimpses[0])}
+            >
+              <img src={glimpses[0].image} alt="Workshop" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
           </div>
 
-          {/* Team Presentation */}
-          <div 
-            className="col-span-12 md:col-span-6"
-            data-id={glimpses[1].id}
-          >
-            <div className={`group relative h-48 md:h-44 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
-              visibleItems.has(glimpses[1].id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ transitionDelay: '100ms' }} onClick={() => openModal(glimpses[1])}>
-              <img 
-                src={glimpses[1].image} 
-                alt="Team Image"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
+          <div className="col-span-12 md:col-span-6" data-id={glimpses[1].id}>
+            <div
+              className={`group relative h-48 md:h-44 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
+                visibleItems.has(glimpses[1].id) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "100ms" }}
+              onClick={() => openModal(glimpses[1])}
+            >
+              <img src={glimpses[1].image} alt="Team" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
           </div>
 
-          {/* Mentoring Session */}
-          <div 
-            className="col-span-12 md:col-span-6"
-            data-id={glimpses[2].id}
-          >
-            <div className={`group relative h-48 md:h-44 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
-              visibleItems.has(glimpses[2].id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ transitionDelay: '200ms' }} onClick={() => openModal(glimpses[2])}>
-              <img 
-                src={glimpses[2].image} 
-                alt="Mentoring Image"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
+          <div className="col-span-12 md:col-span-6" data-id={glimpses[2].id}>
+            <div
+              className={`group relative h-48 md:h-44 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
+                visibleItems.has(glimpses[2].id) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "200ms" }}
+              onClick={() => openModal(glimpses[2])}
+            >
+              <img src={glimpses[2].image} alt="Mentoring" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
           </div>
 
-          {/* Projects */}
-          <div 
-            className="col-span-12 md:col-span-4"
-            data-id={glimpses[3].id}
-          >
-            <div className={`group relative h-48 md:h-60 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
-              visibleItems.has(glimpses[3].id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ transitionDelay: '300ms' }} onClick={() => openModal(glimpses[3])}>
-              <img 
-                src={glimpses[3].image} 
-                alt="Project Image"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
+          <div className="col-span-12 md:col-span-4" data-id={glimpses[3].id}>
+            <div
+              className={`group relative h-48 md:h-60 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
+                visibleItems.has(glimpses[3].id) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "300ms" }}
+              onClick={() => openModal(glimpses[3])}
+            >
+              <img src={glimpses[3].image} alt="Project" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
           </div>
 
-          {/* Innovation Hub */}
-          <div 
-            className="col-span-12 md:col-span-4"
-            data-id={glimpses[4].id}
-          >
-            <div className={`group relative h-48 md:h-60 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
-              visibleItems.has(glimpses[4].id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ transitionDelay: '400ms' }} onClick={() => openModal(glimpses[4])}>
-              <img 
-                src={glimpses[4].image} 
-                alt="Innovation Image"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
+          <div className="col-span-12 md:col-span-4" data-id={glimpses[4].id}>
+            <div
+              className={`group relative h-48 md:h-60 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
+                visibleItems.has(glimpses[4].id) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "400ms" }}
+              onClick={() => openModal(glimpses[4])}
+            >
+              <img src={glimpses[4].image} alt="Innovation" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
           </div>
 
-          {/* Competition Ready */}
-          <div 
-            className="col-span-12 md:col-span-4"
-            data-id={glimpses[5].id}
-          >
-            <div className={`group relative h-48 md:h-60 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
-              visibleItems.has(glimpses[5].id) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`} style={{ transitionDelay: '500ms' }} onClick={() => openModal(glimpses[5])}>
-              <img 
-                src={glimpses[5].image} 
-                alt="Competition Image"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
+          <div className="col-span-12 md:col-span-4" data-id={glimpses[5].id}>
+            <div
+              className={`group relative h-48 md:h-60 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer ${
+                visibleItems.has(glimpses[5].id) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: "500ms" }}
+              onClick={() => openModal(glimpses[5])}
+            >
+              <img src={glimpses[5].image} alt="Competition" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
           </div>
         </div>
 
-        {/* Modal for Image Preview */}
-        {activeImage && (
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={closeModal}>
-            <div className="relative max-w-4xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl" onClick={(e) => e.stopPropagation()}>
-              <button 
-                onClick={closeModal}
-                className="absolute top-4 right-4 z-30 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
-              >
-                ✕
-              </button>
-              <img 
-                src={activeImage.image} 
-                alt="Gallery Image"
-                className="w-full h-auto max-h-[90vh] object-cover"
+        {/* Mobile Horizontal Scroll */}
+        <div className="flex md:hidden space-x-4 overflow-x-auto scrollbar-hide">
+          {glimpses.map((glimpse) => (
+            <div
+              key={glimpse.id}
+              className="flex-shrink-0 w-64 h-40 rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+              onClick={() => openModal(glimpse)}
+            >
+              <img
+                src={glimpse.image}
+                alt={`Gallery ${glimpse.id}`}
+                className="w-full h-full object-cover"
               />
             </div>
-          </div>
-        )}
+          ))}
+        </div>
       </div>
+
+      {/* Modal */}
+      {activeImage && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={closeModal}
+        >
+          <div
+            className="relative max-w-4xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-30 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+            >
+              ✕
+            </button>
+            <img
+              src={activeImage.image}
+              alt="Gallery Image"
+              className="w-full h-auto max-h-[90vh] object-cover"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

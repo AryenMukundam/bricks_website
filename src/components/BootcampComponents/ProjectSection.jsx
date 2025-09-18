@@ -30,17 +30,6 @@ const ProjectsCarousel = () => {
     },
     {
       id: 2,
-      title: "Eco-Warrior Recycling Bot",
-      category: "Environmental",
-      description:
-        "Create a robot that sorts trash automatically - be a hero for the planet while learning cutting-edge tech!",
-      difficulty: "Intermediate",
-      skillsGained: "Computer vision, servo motors, sustainable engineering",
-      icon: Recycle,
-      color: "emerald",
-    },
-    {
-      id: 3,
       title: "Pet Butler Robot",
       category: "Smart Home",
       description:
@@ -51,7 +40,7 @@ const ProjectsCarousel = () => {
       color: "pink",
     },
     {
-      id: 4,
+      id: 3,
       title: "Home Security Guardian",
       category: "Safety & Security",
       description:
@@ -61,6 +50,17 @@ const ProjectsCarousel = () => {
         "Image processing, wireless communication, security protocols",
       icon: Shield,
       color: "blue",
+    },
+    {
+      id: 4,
+      title: "Eco-Warrior Recycling Bot",
+      category: "Environmental",
+      description:
+        "Create a robot that sorts trash automatically - be a hero for the planet while learning cutting-edge tech!",
+      difficulty: "Intermediate",
+      skillsGained: "Computer vision, servo motors, sustainable engineering",
+      icon: Recycle,
+      color: "emerald",
     },
     {
       id: 5,
@@ -145,7 +145,7 @@ const ProjectsCarousel = () => {
         icon: "from-green-500 to-green-600",
         hover: "hover:text-green-600",
         skillsBox: "from-green-500/5 to-green-400/10 border-green-500/20",
-        skillsText: "text-green-600"
+        skillsText: "text-green-600",
       },
       emerald: {
         gradient: "from-emerald-50 to-emerald-100",
@@ -153,7 +153,7 @@ const ProjectsCarousel = () => {
         icon: "from-emerald-500 to-emerald-600",
         hover: "hover:text-emerald-600",
         skillsBox: "from-emerald-500/5 to-emerald-400/10 border-emerald-500/20",
-        skillsText: "text-emerald-600"
+        skillsText: "text-emerald-600",
       },
       pink: {
         gradient: "from-pink-50 to-pink-100",
@@ -161,7 +161,7 @@ const ProjectsCarousel = () => {
         icon: "from-pink-500 to-pink-600",
         hover: "hover:text-pink-600",
         skillsBox: "from-pink-500/5 to-pink-400/10 border-pink-500/20",
-        skillsText: "text-pink-600"
+        skillsText: "text-pink-600",
       },
       blue: {
         gradient: "from-blue-50 to-blue-100",
@@ -169,7 +169,7 @@ const ProjectsCarousel = () => {
         icon: "from-blue-500 to-blue-600",
         hover: "hover:text-blue-600",
         skillsBox: "from-blue-500/5 to-blue-400/10 border-blue-500/20",
-        skillsText: "text-blue-600"
+        skillsText: "text-blue-600",
       },
       purple: {
         gradient: "from-purple-50 to-purple-100",
@@ -177,7 +177,7 @@ const ProjectsCarousel = () => {
         icon: "from-purple-500 to-purple-600",
         hover: "hover:text-purple-600",
         skillsBox: "from-purple-500/5 to-purple-400/10 border-purple-500/20",
-        skillsText: "text-purple-600"
+        skillsText: "text-purple-600",
       },
       cyan: {
         gradient: "from-cyan-50 to-cyan-100",
@@ -185,7 +185,7 @@ const ProjectsCarousel = () => {
         icon: "from-cyan-500 to-cyan-600",
         hover: "hover:text-cyan-600",
         skillsBox: "from-cyan-500/5 to-cyan-400/10 border-cyan-500/20",
-        skillsText: "text-cyan-600"
+        skillsText: "text-cyan-600",
       },
       red: {
         gradient: "from-red-50 to-red-100",
@@ -193,7 +193,7 @@ const ProjectsCarousel = () => {
         icon: "from-red-500 to-red-600",
         hover: "hover:text-red-600",
         skillsBox: "from-red-500/5 to-red-400/10 border-red-500/20",
-        skillsText: "text-red-600"
+        skillsText: "text-red-600",
       },
       indigo: {
         gradient: "from-indigo-50 to-indigo-100",
@@ -201,56 +201,108 @@ const ProjectsCarousel = () => {
         icon: "from-indigo-500 to-indigo-600",
         hover: "hover:text-indigo-600",
         skillsBox: "from-indigo-500/5 to-indigo-400/10 border-indigo-500/20",
-        skillsText: "text-indigo-600"
-      }
+        skillsText: "text-indigo-600",
+      },
     };
     return colorMap[color];
   };
 
   return (
-    <section className="bg-[#fff8f2] relative overflow-hidden py-10 ">
-
+    <section className="bg-[#fff8f2] relative overflow-hidden py-10">
       <div className="bg-[#fff8f2] container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-     
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+        {/* Heading */}
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl lg:text-5xl font-black text-gray-900 leading-tight mb-4">
             <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
               Amazing Robots
             </span>{" "}
             You'll Actually Build!
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Real projects that solve real problems. Build confidence, learn
-            valuable skills, and create something awesome that friends and
-            family will love!
+          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+            Each project is designed to be fun, engaging, and packed with real
+            learning. Not just theory, but working robots they can proudly
+            showcase.
           </p>
-          <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-gray-600">
-            <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-orange-500" />
-              <span>Age-appropriate</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-orange-500" />
-              <span>Structured learning path</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Trophy className="w-4 h-4 text-orange-500" />
-              <span>Portfolio-worthy projects</span>
-            </div>
-          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
-          {projects.map((project, index) => {
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 mb-16">
+          {projects.map((project) => {
             const IconComponent = project.icon;
             const colors = getCardColors(project.color);
             return (
               <div
                 key={project.id}
-                className="group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:border-gray-200 hover:shadow-2xl shadow-lg flex flex-col"
+                className="group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-4 hover:border-gray-200 hover:shadow-2xl shadow-lg flex flex-col"
               >
-                <div className={`p-6 bg-gradient-to-r ${colors.gradient} flex flex-col h-full`}>
+                <div
+                  className={`p-8 bg-gradient-to-r ${colors.gradient} flex flex-col h-full`}
+                >
+                  <div className="flex items-start justify-between mb-6">
+                    <span
+                      className={`px-4 py-2 ${colors.category} text-white rounded-full text-sm font-semibold`}
+                    >
+                      {project.category}
+                    </span>
+                    <span
+                      className={`px-4 py-2 rounded-full text-sm font-medium border flex items-center gap-1 ${getDifficultyColor(
+                        project.difficulty
+                      )}`}
+                    >
+                      {getDifficultyIcon(project.difficulty)}
+                      {project.difficulty}
+                    </span>
+                  </div>
+                  <div
+                    className={`w-20 h-20 bg-gradient-to-br ${colors.icon} rounded-xl flex items-center justify-center mb-6 shadow-lg`}
+                  >
+                    <IconComponent className="w-10 h-10 text-white" />
+                  </div>
+                  <h3
+                    className={`text-2xl font-bold mb-4 text-gray-900 group-hover:transition-colors duration-300 ${colors.hover}`}
+                  >
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-base leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex-grow flex items-end">
+                    <div
+                      className={`bg-gradient-to-r ${colors.skillsBox} p-5 rounded-xl border w-full`}
+                    >
+                      <h4
+                        className={`text-base font-semibold ${colors.skillsText} mb-2`}
+                      >
+                        💪 Skills You'll Gain:
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        {project.skillsGained}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Mobile Carousel */}
+        <div className="md:hidden overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory flex gap-6 mb-16">
+          {projects.map((project) => {
+            const IconComponent = project.icon;
+            const colors = getCardColors(project.color);
+            return (
+              <div
+                key={project.id}
+                className="min-w-[80%] snap-center group bg-white border-2 border-gray-100 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-200 hover:shadow-2xl shadow-lg flex flex-col"
+              >
+                <div
+                  className={`p-6 bg-gradient-to-r ${colors.gradient} flex flex-col h-full`}
+                >
                   <div className="flex items-start justify-between mb-4">
-                    <span className={`px-3 py-1.5 ${colors.category} text-white rounded-full text-xs font-semibold`}>
+                    <span
+                      className={`px-3 py-1.5 ${colors.category} text-white rounded-full text-xs font-semibold`}
+                    >
                       {project.category}
                     </span>
                     <span
@@ -262,18 +314,26 @@ const ProjectsCarousel = () => {
                       {project.difficulty}
                     </span>
                   </div>
-                  <div className={`w-16 h-16 bg-gradient-to-br ${colors.icon} rounded-xl flex items-center justify-center mb-4 shadow-lg`}>
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-br ${colors.icon} rounded-xl flex items-center justify-center mb-4 shadow-lg`}
+                  >
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className={`text-xl font-bold mb-3 text-gray-900 group-hover:transition-colors duration-300 ${colors.hover}`}>
+                  <h3
+                    className={`text-lg font-bold mb-3 text-gray-900 ${colors.hover}`}
+                  >
                     {project.title}
                   </h3>
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                     {project.description}
                   </p>
                   <div className="flex-grow flex items-end">
-                    <div className={`bg-gradient-to-r ${colors.skillsBox} p-4 rounded-xl border w-full`}>
-                      <h4 className={`text-sm font-semibold ${colors.skillsText} mb-2`}>
+                    <div
+                      className={`bg-gradient-to-r ${colors.skillsBox} p-4 rounded-xl border w-full`}
+                    >
+                      <h4
+                        className={`text-sm font-semibold ${colors.skillsText} mb-2`}
+                      >
                         💪 Skills You'll Gain:
                       </h4>
                       <p className="text-xs text-gray-700">
@@ -286,44 +346,46 @@ const ProjectsCarousel = () => {
             );
           })}
         </div>
+
+        {/* Why These Projects Matter */}
         <div className="text-center">
-          <div className="bg-white border border-gray-200 rounded-2xl p-8 max-w-4xl mx-auto shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Why These Projects Matter ?
+          <div className="bg-white border border-gray-300 rounded-2xl p-6 sm:p-10 md:p-12 max-w-4xl mx-auto shadow-md">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              Why These Projects Matter?
             </h3>
-            <div className="grid md:grid-cols-3 gap-6 text-sm">
+            <div className="grid md:grid-cols-3 gap-6 text-xs sm:text-sm md:text-base">
               <div className="text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <BookOpen className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                  <BookOpen className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">
+                <h4 className="font-semibold text-gray-900 mb-2 md:mb-3">
                   Real-World Skills
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 md:text-base">
                   Programming, engineering, and problem-solving skills that
                   colleges and employers value.
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Users className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                  <Users className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">
+                <h4 className="font-semibold text-gray-900 mb-2 md:mb-3">
                   Age-Appropriate
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 md:text-base">
                   Designed specifically for this age with proper scaffolding and
                   support.
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Trophy className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+                  <Trophy className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">
+                <h4 className="font-semibold text-gray-900 mb-2 md:mb-3">
                   Portfolio Building
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 md:text-base">
                   Each project becomes a showcase piece for college applications
                   and internships.
                 </p>

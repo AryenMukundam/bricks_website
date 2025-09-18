@@ -93,81 +93,89 @@ const ProgramSection = () => {
     <section id="program" className="relative py-20 bg-white">
       {/* Geometric background pattern */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white rounded-full opacity-30"></div>{" "}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white rounded-full opacity-30"></div>
       </div>
 
       <div className="bg-white container mx-auto px-4 relative z-10">
         {/* Centered Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-gray-900 leading-snug">
             What's{" "}
             <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
               Included
             </span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-12">
+          <p className="text-base lg:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10">
             A comprehensive 3-month journey that transforms students into
             confident innovators and problem-solvers
           </p>
 
-          {/* Enhanced Stats Grid */}
+          {/* Stats Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="group bg-gradient-to-br from-white to-orange-50 rounded-2xl p-6 shadow-xl border border-orange-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                <BookOpen className="w-6 h-6 text-white" />
+            <div className="group bg-gradient-to-br from-white to-orange-50 rounded-2xl p-5 shadow-xl border border-orange-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
+                <BookOpen className="w-5 h-5 text-white" />
               </div>
-              <div className="text-4xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent mb-2">
+              <div className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent mb-1">
                 3
               </div>
-              <div className="text-sm font-medium text-gray-700">
+              <div className="text-xs font-medium text-gray-700">
                 Months Duration
               </div>
-              <div className="text-xs text-gray-500 mt-1">Complete Program</div>
-            </div>
-            <div className="group bg-gradient-to-br from-white to-blue-50 rounded-2xl p-6 shadow-xl border border-blue-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-6 h-6 text-white" />
+              <div className="text-[11px] text-gray-500 mt-1">
+                Complete Program
               </div>
-              <div className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent mb-2">
+            </div>
+            <div className="group bg-gradient-to-br from-white to-blue-50 rounded-2xl p-5 shadow-xl border border-blue-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
+                <Target className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent mb-1">
                 15+
               </div>
-              <div className="text-sm font-medium text-gray-700">
+              <div className="text-xs font-medium text-gray-700">
                 Real Projects
               </div>
-              <div className="text-xs text-gray-500 mt-1">Portfolio Ready</div>
-            </div>
-            <div className="group bg-gradient-to-br from-white to-green-50 rounded-2xl p-6 shadow-xl border border-green-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                <Zap className="w-6 h-6 text-white" />
+              <div className="text-[11px] text-gray-500 mt-1">
+                Portfolio Ready
               </div>
-              <div className="text-4xl font-bold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent mb-2">
+            </div>
+            <div className="group bg-gradient-to-br from-white to-green-50 rounded-2xl p-5 shadow-xl border border-green-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent mb-1">
                 100%
               </div>
-              <div className="text-sm font-medium text-gray-700">
+              <div className="text-xs font-medium text-gray-700">
                 Hands-on Learning
               </div>
-              <div className="text-xs text-gray-500 mt-1">No Theory Only</div>
+              <div className="text-[11px] text-gray-500 mt-1">
+                No Theory Only
+              </div>
             </div>
-            <div className="group bg-gradient-to-br from-white to-purple-50 rounded-2xl p-6 shadow-xl border border-purple-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center relative overflow-hidden">
-              <div className="absolute top-2 right-2 bg-purple-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+            <div className="group bg-gradient-to-br from-white to-purple-50 rounded-2xl p-5 shadow-xl border border-purple-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center relative overflow-hidden">
+              <div className="absolute top-1 right-1 bg-purple-500 text-white text-[10px] px-2 py-[2px] rounded-full font-medium">
                 FREE
               </div>
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                <Award className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
+                <Award className="w-5 h-5 text-white" />
               </div>
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent mb-2">
+              <div className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent mb-1">
                 ₹4K
               </div>
-              <div className="text-sm font-medium text-gray-700">
+              <div className="text-xs font-medium text-gray-700">
                 Robotics Kit
               </div>
-              <div className="text-xs text-gray-500 mt-1">Yours to Keep</div>
+              <div className="text-[11px] text-gray-500 mt-1">
+                Yours to Keep
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Features in alternating layout */}
-        <div className="space-y-12">
+        {/* Features alternating layout */}
+        <div className="space-y-10">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             const colors = getColorClasses(feature.color);
@@ -179,20 +187,20 @@ const ProgramSection = () => {
                 key={index}
                 className={`flex flex-col ${
                   isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                } items-center gap-8 lg:gap-16`}
+                } items-center gap-6 lg:gap-12`}
               >
                 {/* Icon side */}
                 <div className="lg:w-1/3 flex justify-center">
                   <div
-                    className={`relative p-8 ${colors.light} rounded-3xl ${colors.border} border-2 shadow-xl ${colors.shadow}`}
+                    className={`relative p-6 ${colors.light} rounded-2xl ${colors.border} border shadow-lg ${colors.shadow}`}
                   >
                     <div
-                      className={`w-20 h-20 ${colors.bg} rounded-2xl flex items-center justify-center shadow-lg`}
+                      className={`w-16 h-16 ${colors.bg} rounded-xl flex items-center justify-center shadow-md`}
                     >
-                      <IconComponent className="w-10 h-10 text-white" />
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     {isSpecial && (
-                      <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full font-medium">
+                      <div className="absolute -top-2 -right-2 bg-orange-500 text-white text-[10px] px-2 py-[2px] rounded-full font-medium">
                         ✨ Exclusive
                       </div>
                     )}
@@ -203,18 +211,18 @@ const ProgramSection = () => {
                 <div
                   className={`lg:w-2/3 ${
                     isEven ? "text-left" : "text-right"
-                  } max-w-2xl`}
+                  } max-w-xl`}
                 >
                   <h3
-                    className={`text-2xl lg:text-3xl font-bold mb-4 text-gray-900 ${colors.text}`}
+                    className={`text-lg lg:text-xl font-semibold mb-2 text-gray-900 ${colors.text}`}
                   >
                     {feature.title}
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  <p className="text-sm lg:text-base text-gray-600 leading-relaxed mb-4">
                     {feature.desc}
                   </p>
                   <div
-                    className={`w-16 h-1 ${colors.bg} rounded-full ${
+                    className={`w-12 h-[3px] ${colors.bg} rounded-full ${
                       isEven ? "" : "ml-auto"
                     }`}
                   ></div>
@@ -224,8 +232,7 @@ const ProgramSection = () => {
           })}
         </div>
 
-        {/* Bottom CTA with different design */}
-        <div className="mt-20"></div>
+        <div className="mt-16"></div>
       </div>
     </section>
   );

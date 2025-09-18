@@ -238,28 +238,7 @@ const RefundPolicy = () => {
           ))}
         </div>
 
-        {/* Compact Contact Section */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-6 text-sm sm:text-base">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-              <Phone className="w-5 sm:w-6 h-5 sm:h-6 text-blue-600" />
-            </div>
-            <div className="flex-1 space-y-1">
-              <div><span className="font-medium">Legal Name:</span> Adhyayan and Aryan Jakhar</div>
-              <div>
-                <span className="font-medium">Email:</span>{" "}
-                <a href="mailto:support@bricks.org.in" className="text-blue-600 hover:underline">support@bricks.org.in</a>
-              </div>
-              <div>
-                <span className="font-medium">Phone:</span>{" "}
-                <a href="tel:+919871672790" className="text-blue-600 hover:underline">+91 98716 72790</a>
-              </div>
-              <div>
-                <span className="font-medium">Address:</span> Electronic City Phase 1, Bengaluru, Karnataka
-              </div>
-            </div>
-          </div>
-        </div>
+    
 
         {/* Footer */}
         <div className="text-center py-6 sm:py-8">

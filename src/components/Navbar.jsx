@@ -59,24 +59,24 @@ function Navbar() {
           <div className="hidden md:flex items-center space-x-10">
             <Link
               to="/"
-              className="text-xl text-gray-700 font-medium text-sm hover:text-orange-500 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all after:duration-700"
+              className="text-lg text-gray-700 font-medium hover:text-orange-500 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all after:duration-700"
             >
               Home
             </Link>
             <Link
               to="/bootcamp"
-              className="text-xl text-gray-700 font-medium text-sm hover:text-orange-500 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all after:duration-700"
+              className="text-lg text-gray-700 font-medium hover:text-orange-500 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all after:duration-700"
             >
               Bootcamp
             </Link>
 
             {/* Contact Button */}
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center">
               <Link
                 to="/contact"
-                className="text-xl bg-gradient-to-r from-[#ff7b00] to-[#ff4500] text-white font-medium px-5 py-2 rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm"
+                className="bg-gradient-to-r from-[#ff7b00] to-[#ff4500] text-white font-medium px-5 py-2 rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm"
               >
-                Contact
+                Start
               </Link>
             </div>
           </div>
@@ -109,7 +109,7 @@ function Navbar() {
                 className="inline-block bg-gradient-to-r from-[#ff7b00] to-[#ff4500] text-white font-medium px-6 py-3 rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                Start
               </Link>
             </div>
           </div>

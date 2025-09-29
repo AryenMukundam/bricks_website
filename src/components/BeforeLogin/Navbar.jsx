@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/images/Logo.png";
+import logo from "../../assets/images/Logo.png";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -11,7 +11,8 @@ function Navbar() {
 
   return (
     <nav className="shadow-lg backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto py-5 px-4 md:px-0">
+      <div className="w-full py-3 px-10">
+        {" "}
         <div className="flex items-center justify-between">
           <Link
             to="/"
@@ -70,18 +71,24 @@ function Navbar() {
               Bootcamp
             </Link>
 
+            <Link
+              to="/contact"
+              className="text-lg text-gray-700 font-medium hover:text-orange-500 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 hover:after:w-full after:transition-all after:duration-700"
+            >
+              Contact
+            </Link>
+
             {/* Contact Button */}
             <div className="flex justify-center items-center">
               <Link
-                to="/contact"
+                to="/login"
                 className="bg-gradient-to-r from-[#ff7b00] to-[#ff4500] text-white font-medium px-5 py-2 rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm"
               >
-                Start
+                Login
               </Link>
             </div>
           </div>
         </div>
-
         {/* Mobile Navigation Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
@@ -103,13 +110,20 @@ function Navbar() {
             >
               Bootcamp
             </Link>
+            <Link
+              to="/contact"
+              className="block text-lg text-gray-700 font-medium hover:text-orange-500 transition-colors duration-300 py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
             <div className="pt-2">
               <Link
-                to="/contact"
+                to="/login"
                 className="inline-block bg-gradient-to-r from-[#ff7b00] to-[#ff4500] text-white font-medium px-6 py-3 rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Start
+                Login
               </Link>
             </div>
           </div>

@@ -1,9 +1,12 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Sparkles, ArrowRight } from "lucide-react";
+import Navbar from "../components/BeforeLogin/Navbar";
 
 const Contact = () => {
   return (
+    <>
+    <Navbar/>
     <div className="bg-gray-50 font-sans min-h-screen">
       <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-8 md:py-12">
 
@@ -77,6 +80,7 @@ const Contact = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 

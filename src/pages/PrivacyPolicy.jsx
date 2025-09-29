@@ -8,6 +8,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import Navbar from "../components/BeforeLogin/Navbar";
 
 const PrivacyPolicy = () => {
   const [expandedSections, setExpandedSections] = useState({});
@@ -172,6 +173,8 @@ const PrivacyPolicy = () => {
   ];
 
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b border-gray-200">
@@ -259,6 +262,7 @@ const PrivacyPolicy = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

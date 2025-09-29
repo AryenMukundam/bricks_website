@@ -1,5 +1,5 @@
 import React from "react";
-import teamPhoto from "../../assets/images/Team.jpg";
+import teamPhoto from "../../../assets/images/Team.jpg";
 
 const AboutUs = () => {
   return (

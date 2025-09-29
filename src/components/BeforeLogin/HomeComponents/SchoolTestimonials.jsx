@@ -1,9 +1,9 @@
 import React from "react";
 
 // Import testimonial images
-import principal1 from "../../assets/images/schooltestimonials/Pic1.jpg";
-import principal2 from "../../assets/images/schooltestimonials/Pic3.jpg";
-import teacher1 from "../../assets/images/schooltestimonials/Pic2.jpg";
+import principal1 from "../../../assets/images/schooltestimonials/Pic1.jpg";
+import principal2 from "../../../assets/images/schooltestimonials/Pic3.jpg";
+import teacher1 from "../../../assets/images/schooltestimonials/Pic2.jpg";
 
 export default function SchoolTestimonials() {
   const testimonials = [

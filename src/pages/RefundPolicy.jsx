@@ -7,6 +7,7 @@ import {
   AlertTriangle,
   CheckCircle,
 } from "lucide-react";
+import Navbar from "../components/BeforeLogin/Navbar";
 
 const RefundPolicy = () => {
   const [expandedSections, setExpandedSections] = useState({});
@@ -176,6 +177,8 @@ const RefundPolicy = () => {
   ];
 
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b border-gray-200">
@@ -252,6 +255,8 @@ const RefundPolicy = () => {
 
       </div>
     </div>
+
+    </>
   );
 };
 

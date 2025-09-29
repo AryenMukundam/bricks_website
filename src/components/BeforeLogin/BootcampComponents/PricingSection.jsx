@@ -12,7 +12,7 @@ import {
   Star,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import roboticsKitImage from "../../assets/images/robotics-kit.jpg";
+import roboticsKitImage from "../../../assets/images/robotics-kit.jpg";
 
 const PricingSection = () => {
   const commonFeatures = [

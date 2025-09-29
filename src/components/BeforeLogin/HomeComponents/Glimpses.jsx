@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Camera } from "lucide-react";
-import Pic1 from "../../assets/images/glimpses/Futures.jpg";
-import Pic2 from "../../assets/images/glimpses/Project.jpg";
-import Pic3 from "../../assets/images/glimpses/Guidance.jpg";
-import Pic4 from "../../assets/images/glimpses/Teamwork.jpg";
-import Pic5 from "../../assets/images/glimpses/Mentorship.jpg";
-import Pic6 from "../../assets/images/glimpses/Prize.jpg";
+import Pic1 from "../../../assets/images/glimpses/Futures.jpg";
+import Pic2 from "../../../assets/images/glimpses/Project.jpg";
+import Pic3 from "../../../assets/images/glimpses/Guidance.jpg";
+import Pic4 from "../../../assets/images/glimpses/Teamwork.jpg";
+import Pic5 from "../../../assets/images/glimpses/Mentorship.jpg";
+import Pic6 from "../../../assets/images/glimpses/Prize.jpg";
 
 export default function GlimpsesSection() {
   const [activeImage, setActiveImage] = useState(null);

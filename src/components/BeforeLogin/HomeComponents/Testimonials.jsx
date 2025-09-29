@@ -1,8 +1,8 @@
 import React from "react";
-import Pic1 from "../../assets/images/testimonials/Pic1.jpg";
-import Pic2 from "../../assets/images/testimonials/Pic2.jpg";
-import Pic3 from "../../assets/images/testimonials/Pic3.jpg";
-import Pic4 from "../../assets/images/testimonials/Pic4.jpg";
+import Pic1 from "../../../assets/images/testimonials/Pic1.jpg";
+import Pic2 from "../../../assets/images/testimonials/Pic2.jpg";
+import Pic3 from "../../../assets/images/testimonials/Pic3.jpg";
+import Pic4 from "../../../assets/images/testimonials/Pic4.jpg";
 
 const Testimonials = () => {
   const legends = [

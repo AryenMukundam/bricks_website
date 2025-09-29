@@ -2,10 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 // Import logos
-import school1 from "../../assets/images/partners/School1.jpg";
-import school2 from "../../assets/images/partners/School2.png";
-import school3 from "../../assets/images/partners/School3.jpg";
-import school4 from "../../assets/images/partners/School4.jpeg";
+import school1 from "../../../assets/images/partners/School1.jpg";
+import school2 from "../../../assets/images/partners/School2.png";
+import school3 from "../../../assets/images/partners/School3.jpg";
+import school4 from "../../../assets/images/partners/School4.jpeg";
 
 export default function Partner() {
   const navigate = useNavigate();

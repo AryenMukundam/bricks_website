@@ -1,76 +1,156 @@
-import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import "./App.css";
 import Contact from "./pages/Contact";
-import Navbar from "./components/BeforeLogin/Navbar";
 import Bootcamp from "./pages/Bootcamp";
-import Footer from "./components/BeforeLogin/Footer";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
-import { useEffect } from "react";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
+import Selection from "./pages/Login/Selection";
+import StudentLogin from "./pages/Login/StudentLogin";
+import TeacherLogin from "./pages/Login/TeacherLogin";
+import StudentHome from "./pages/StudentDashboard/StudentHome";
 import Profile from "./pages/Profile";
+import InstructorHome from "./pages/InstructorDashboard/InstructorHome";
+import { useSelector } from "react-redux";
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  }, [pathname]);
-
+const getCookie = (name) => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
   return null;
 };
 
-// Layout component that conditionally renders Navbar and Footer
-const Layout = ({ children }) => {
-  const location = useLocation();
-  
-  // Define routes where header and footer should be hidden
-  const hideHeaderFooterRoutes = ['/dashboard' , '/profile'];
-  
-  // Check if current route should hide header/footer
-  const shouldHideHeaderFooter = hideHeaderFooterRoutes.some(route => 
-    location.pathname.startsWith(route)
-  );
+const ProtectedRoute = ({ children }) => {
+  const token = getCookie("token");
 
-  return (
-    <>
-      <ScrollToTop />
-      {children}
-      {!shouldHideHeaderFooter && <Footer />}
-    </>
-  );
+  if (!token) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
+const PublicRoute = ({ children, redirectTo = "/student-dashboard" }) => {
+  const token = getCookie("token");
+
+  if (token) {
+    return <Navigate to={redirectTo} replace />;
+  }
+
+  return children;
 };
 
 function App() {
+
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Home />
-              </>
-            }
-          />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/bootcamp" element={<Bootcamp />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          <Route path="/refund-policy" element={<RefundPolicy />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PublicRoute redirectTo="/student-dashboard">
+              <Home />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <PublicRoute redirectTo="/student-dashboard">
+              <Contact />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/bootcamp"
+          element={
+            <PublicRoute redirectTo="/student-dashboard">
+              <Bootcamp />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/terms-and-conditions"
+          element={
+            <PublicRoute redirectTo="/student-dashboard">
+              <TermsAndConditions />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/refund-policy"
+          element={
+            <PublicRoute redirectTo="/student-dashboard">
+              <RefundPolicy />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/privacy-policy"
+          element={
+            <PublicRoute redirectTo="/student-dashboard">
+              <PrivacyPolicy />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/login"
+          element={
+            <PublicRoute redirectTo="/student-dashboard">
+              <Selection />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/login/student"
+          element={
+            <PublicRoute redirectTo="/student-dashboard">
+              <StudentLogin />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/login/instructor"
+          element={
+            <PublicRoute redirectTo="/instructor-dashboard">
+              <TeacherLogin />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/student-dashboard"
+          element={
+            
+            <ProtectedRoute>
+              <StudentHome />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/instructor-dashboard"
+          element={
+            <ProtectedRoute>
+              <InstructorHome />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </BrowserRouter>
   );
 }

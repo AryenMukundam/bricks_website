@@ -23,7 +23,7 @@ const calculateDuration = (timeString) => {
 };
 
 const Class = () => {
-  const [selectedDate, setSelectedDate] = useState('29 Sep');
+  const [selectedDate, setSelectedDate] = useState('26 Sep');
 
   const classData = {
     '26 Sep': [

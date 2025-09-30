@@ -10,7 +10,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import Logo from "../../assets/images/Logo.png";
-import { logout } from "../../apiCalls/authCalls";
+import {  studentlogout } from "../../apiCalls/authCalls";
 
 // Logout Confirmation Modal Component
 const LogoutModal = ({ isOpen, onClose, onConfirm, isLoading }) => {
@@ -101,7 +101,7 @@ function Navbar() {
   const handleLogoutConfirm = async () => {
     try {
       setIsLoggingOut(true);
-      await logout();
+      await studentlogout();
 
       // Clear any stored data
       localStorage.removeItem("user");

@@ -1,16 +1,56 @@
 import React, { useState } from "react";
-import { FiMail, FiLock, FiEye, FiEyeOff } from "react-icons/fi";
+import { FiMail, FiLock, FiEye, FiEyeOff, FiX, FiAlertCircle } from "react-icons/fi";
 import Logo from "../assets/images/Logo.png"
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/BeforeLogin/Navbar";
+import { login } from "../apiCalls/authCalls";
 
+// Error Modal Component
+const ErrorModal = ({ isOpen, onClose, message }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 backdrop-blur-md  bg-opacity-20 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6 relative animate-scale-in">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+        >
+          <FiX size={24} />
+        </button>
+        
+        <div className="flex flex-col items-center text-center">
+          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+            <FiAlertCircle className="text-red-600" size={32} />
+          </div>
+          
+          <h3 className="text-xl font-bold text-gray-800 mb-2">
+            Sign In Failed
+          </h3>
+          
+          <p className="text-gray-600 mb-6">
+            {message || "Invalid credentials. Please check your enrollment number and password."}
+          </p>
+          
+          <button
+            onClick={onClose}
+            className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [enrollmentNumber, setEnrollmentNumber] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showErrorModal, setShowErrorModal] = useState(false);
 
   const navigate = useNavigate();
 
@@ -19,20 +59,25 @@ function Login() {
     setError("");
     setIsLoading(true);
 
+    if(!enrollmentNumber || !password){
+      setError("Please fill in all the details");
+      setShowErrorModal(true);
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      await new Promise((resolve, reject) => {
-        setTimeout(() => {
-          if (email === "jhatujhakar@gmail.com" && password === "696969") {
-            console.log("Login successful:", { email, password });
-            resolve();
-          } else {
-            reject(new Error("Invalid email or password."));
-          }
-        }, 2000);
-      });
+      const student = {enrollmentNumber , password}
+      const response = await login(student)
+      console.log("Sign In Successful", response);
+      
       navigate('/dashboard')
+      setEnrollmentNumber("")
+      setPassword("")
+      
     } catch (err) {
       setError(err.message);
+      setShowErrorModal(true);
     } finally {
       setIsLoading(false);
     }
@@ -45,7 +90,6 @@ function Login() {
       <div className="grid md:grid-cols-2 max-w-4xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
         
         <div className="hidden md:flex flex-col items-center justify-center bg-gradient-to-br from-amber-500 to-orange-600 p-12 text-white rounded-tr-[5rem] rounded-br-[5rem]">
-          
           <h1 className="text-4xl font-bold mb-3">Welcome Back!</h1>
           <p className="text-center text-lg opacity-90">
             Sign in to access your dashboard.
@@ -62,23 +106,21 @@ function Login() {
           </h2>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-            {/* Email Input */}
             <div className="relative">
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                 <FiMail />
               </div>
               <input
-                type="email"
-                id="email"
-                placeholder="Enter your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                id="enrollmentNumber"
+                placeholder="Enter your Enrollment"
+                value={enrollmentNumber}
+                onChange={(e) => setEnrollmentNumber(e.target.value)}
                 required
                 className="w-full pl-12 pr-4 py-3 border rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-shadow"
               />
             </div>
 
-            {/* Password Input */}
             <div className="relative">
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                 <FiLock />
@@ -107,8 +149,6 @@ function Login() {
               </a>
             </div>
 
-            {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-
             <button
               type="submit"
               disabled={isLoading}
@@ -129,10 +169,15 @@ function Login() {
           </form>
         </div>
       </div>
+      
+      <ErrorModal 
+        isOpen={showErrorModal}
+        onClose={() => setShowErrorModal(false)}
+        message={error}
+      />
     </div>
     </>
   );
 }
 
 export default Login;
-
